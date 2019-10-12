@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/left_nav">
+        <!-- android:checkable="true" 设置可选中-->
+        <!--  android:checked="true" 默认选中-->
+        <item
+            android:id="@+id/left_nav_wan_android"
+            android:checkable="true"
+            android:checked="true"
+            android:icon="@drawable/ic_wan_android"
+            android:title="玩android"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/left_nav_collect"
+            android:checkable="true"
+            android:icon="@drawable/ic_collect"
+            android:title="收藏"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/left_nav_setting"
+            android:checkable="true"
+            android:icon="@drawable/ic_setting"
+            android:title="设置"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/left_nav_about_us"
+            android:checkable="true"
+            android:icon="@drawable/ic_about_us"
+            android:title="关于我们"
+            app:showAsAction="ifRoom"></item>
+        <item
+            android:id="@+id/left_nav_login_out"
+            android:checkable="true"
+            android:icon="@drawable/ic_login_out"
+            android:title="退出登录"
+            app:showAsAction="ifRoom"></item>
+    </group>
+
+</menu>
