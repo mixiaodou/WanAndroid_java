@@ -1,31 +1,25 @@
 package com.brucej.wanandroid_java.ui.knowledge.knowledgedetail.fragments;
 
-
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.brucej.wanandroid_java.R;
-import com.brucej.wanandroid_java.base.BaseFragment;
-import com.brucej.wanandroid_java.core.beans.KnowledgeBean;
-import com.brucej.wanandroid_java.core.beans.KnowledgeListBean;
+import com.brucej.wanandroid_java.ui.knowledge.beans.KnowledgeBean;
+import com.brucej.wanandroid_java.ui.knowledge.beans.KnowledgeListBean;
 import com.brucej.wanandroid_java.ui.articledetail.ArticleDetailActivity;
 import com.brucej.wanandroid_java.ui.knowledge.knowledgedetail.fragments.adapters.KnowledgeListDetailAdapter;
+import com.example.lib_comon.base.BaseFragment;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 
-public class KnowledgeDetailFragment extends
-        BaseFragment<KnowledgeDetailPresenter, KnowledgeDetailView, KnowledgeDetailModel>
+public class KnowledgeDetailFragment extends BaseFragment<KnowledgeDetailPresenter, KnowledgeDetailView, KnowledgeDetailModel>
         implements KnowledgeDetailView {
     private String TAG = "KnowledgeDetailFragment--";
     private static final String CHILD_RENBEAN = "childrenBean";
@@ -62,7 +56,7 @@ public class KnowledgeDetailFragment extends
     protected void initDataAndEvent(Bundle instanceState) {
         mPresenter.attachView(this);
         mPresenter.setModel(new KnowledgeDetailModel());
-        //
+
         initBundle();
         initAdapter();
         initSRL();
@@ -83,11 +77,12 @@ public class KnowledgeDetailFragment extends
 
     private void initAdapter() {
         dataList = new ArrayList<>();
-        listDetailAdapter = new KnowledgeListDetailAdapter(R.layout.item_knowledge_list_detail,
-                dataList);
+        listDetailAdapter = new KnowledgeListDetailAdapter(R.layout.item_knowledge_list_detail, dataList);
+
         recyc.setLayoutManager(new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false));
         recyc.setAdapter(listDetailAdapter);
+
         listDetailAdapter.setOnItemClickListener((adapter, view, position) ->
                 skipDetail(dataList.get(position).getLink(), dataList.get(position).getTitle())
         );
@@ -119,8 +114,10 @@ public class KnowledgeDetailFragment extends
     }
 
     public void showKnowledgeDetail(KnowledgeListBean data) {
+        Log.i(TAG, "showKnowledgeDetail " + data.getDatas().toString());
         int curPage = data.getCurPage();
         pageNum = curPage - 1;
+
         if (pageNum == 0) {
             listDetailAdapter.replaceData(data.getDatas());
             srl.finishRefresh();

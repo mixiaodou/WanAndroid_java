@@ -1,10 +1,10 @@
 package com.brucej.wanandroid_java.ui.knowledge.adapters;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
-import com.brucej.wanandroid_java.core.beans.KnowledgeBean;
+import com.brucej.wanandroid_java.ui.knowledge.beans.KnowledgeBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.List;

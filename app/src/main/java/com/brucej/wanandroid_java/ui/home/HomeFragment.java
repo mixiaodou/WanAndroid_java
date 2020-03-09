@@ -2,18 +2,18 @@ package com.brucej.wanandroid_java.ui.home;
 
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
 import com.brucej.wanandroid_java.R;
-import com.brucej.wanandroid_java.base.BaseFragment;
-import com.brucej.wanandroid_java.core.beans.ArticleBean;
-import com.brucej.wanandroid_java.core.beans.BannerBean;
+import com.brucej.wanandroid_java.ui.home.beans.ArticleBean;
+import com.brucej.wanandroid_java.ui.home.beans.BannerBean;
 import com.brucej.wanandroid_java.ui.BannerGlideImageLoader;
 import com.brucej.wanandroid_java.ui.articledetail.ArticleDetailActivity;
 import com.brucej.wanandroid_java.ui.main.adapters.ArticleListAdapter;
+import com.example.lib_comon.base.BaseFragment;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;

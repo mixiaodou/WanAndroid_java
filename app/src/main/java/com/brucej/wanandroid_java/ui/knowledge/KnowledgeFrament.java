@@ -1,14 +1,14 @@
 package com.brucej.wanandroid_java.ui.knowledge;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.brucej.wanandroid_java.R;
-import com.brucej.wanandroid_java.base.BaseFragment;
-import com.brucej.wanandroid_java.core.beans.KnowledgeBean;
+import com.brucej.wanandroid_java.ui.knowledge.beans.KnowledgeBean;
 import com.brucej.wanandroid_java.ui.knowledge.adapters.KnowledgeAdapter;
 import com.brucej.wanandroid_java.ui.knowledge.knowledgedetail.KnowledgeDetailActivity;
+import com.example.lib_comon.base.BaseFragment;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
@@ -59,6 +59,7 @@ public class KnowledgeFrament extends
     private void initRecyc() {
         knowledgeList = new ArrayList<>();
         knowledgeAdapter = new KnowledgeAdapter(R.layout.item_knowledge, knowledgeList);
+
         recycView.setLayoutManager(new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false));
         recycView.setAdapter(knowledgeAdapter);

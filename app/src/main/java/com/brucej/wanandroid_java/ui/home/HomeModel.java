@@ -1,24 +1,21 @@
 package com.brucej.wanandroid_java.ui.home;
 
-import com.brucej.wanandroid_java.base.BaseModel;
-import com.brucej.wanandroid_java.core.RetrofitHelper;
-import com.brucej.wanandroid_java.core.beans.ArticleBean;
-import com.brucej.wanandroid_java.core.beans.BannerBean;
-import com.brucej.wanandroid_java.core.beans.BaseBean;
+import com.brucej.wanandroid_java.api.RestApi;
+import com.brucej.wanandroid_java.ui.home.beans.ArticleBean;
+import com.brucej.wanandroid_java.ui.home.beans.BannerBean;
+import com.example.lib_comon.base.BaseModel;
+import com.example.lib_comon.bean.BaseBean;
+import com.example.lib_comon.core.net.RetrofitHelper;
 
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 
 public class HomeModel extends BaseModel {
 
     public void getBanerData(BannerDataCallback callback) {
         Observable<BaseBean<List<BannerBean>>> observable = RetrofitHelper.getInstance()
-                .getRestApi().getBanner();
+                .getApi(RestApi.HOST, RestApi.class).getBanner();
         handlerBaseData(observable, callback);
     }
 
@@ -29,10 +26,11 @@ public class HomeModel extends BaseModel {
 
     public void getArticleListData(int num, ArticleListDataCallback callback) {
         Observable<BaseBean<ArticleBean>> observable = RetrofitHelper.getInstance()
-                .getRestApi().getArticleList(num);
+                .getApi(RestApi.HOST, RestApi.class).getArticleList(num);
         handlerBaseData(observable, callback);
 
     }
+
     public interface ArticleListDataCallback extends BaseDataCallback<ArticleBean> {
 
     }

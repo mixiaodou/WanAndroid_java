@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.v7.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -14,8 +14,8 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.brucej.wanandroid_java.R;
-import com.brucej.wanandroid_java.base.BaseActivity;
-import com.brucej.wanandroid_java.utils.CommonUtil;
+import com.example.lib_comon.base.BaseActivity;
+import com.example.lib_comon.utils.CommonUtil;
 import com.just.agentweb.AgentWeb;
 
 import butterknife.BindView;

@@ -1,7 +1,7 @@
 package com.brucej.wanandroid_java.ui.knowledge;
 
-import com.brucej.wanandroid_java.base.BaseIView;
-import com.brucej.wanandroid_java.core.beans.KnowledgeBean;
+import com.brucej.wanandroid_java.ui.knowledge.beans.KnowledgeBean;
+import com.example.lib_comon.base.BaseIView;
 
 import java.util.List;
 

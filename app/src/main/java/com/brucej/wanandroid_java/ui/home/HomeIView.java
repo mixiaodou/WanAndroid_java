@@ -1,8 +1,8 @@
 package com.brucej.wanandroid_java.ui.home;
 
-import com.brucej.wanandroid_java.base.BaseIView;
-import com.brucej.wanandroid_java.core.beans.ArticleBean;
-import com.brucej.wanandroid_java.core.beans.BannerBean;
+import com.brucej.wanandroid_java.ui.home.beans.ArticleBean;
+import com.brucej.wanandroid_java.ui.home.beans.BannerBean;
+import com.example.lib_comon.base.BaseIView;
 
 import java.util.List;
 

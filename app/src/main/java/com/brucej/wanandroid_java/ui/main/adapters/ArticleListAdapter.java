@@ -1,13 +1,12 @@
 package com.brucej.wanandroid_java.ui.main.adapters;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.View;
 
-import com.brucej.wanandroid_java.core.beans.ArticleBean;
+import com.brucej.wanandroid_java.ui.home.beans.ArticleBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean.DatasBean, ArticleListViewHolder> {

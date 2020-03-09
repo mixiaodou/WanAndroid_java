@@ -1,19 +1,26 @@
 package com.brucej.wanandroid_java.ui.main.activitys;
 
-
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.lib_comon.base.BaseActivity;
+import com.example.lib_comon.utils.StatusBarUtil;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
@@ -21,22 +28,19 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bruce.permisson.PermissonUtil;
 import com.brucej.wanandroid_java.R;
-import com.brucej.wanandroid_java.base.BaseActivity;
 import com.brucej.wanandroid_java.ui.home.HomeFragment;
 import com.brucej.wanandroid_java.ui.knowledge.KnowledgeFrament;
-import com.brucej.wanandroid_java.utils.StatusBarUtil;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivity<MainPresenter, MainIView, MainModel>
-        implements MainIView {
+@Route(path = "app/MainActivity")
+public class MainActivity extends BaseActivity<MainPresenter, MainIView, MainModel> implements MainIView {
+
     private final String TAG = "MainActivity--";
     @BindView(R.id.drawer_main)
     DrawerLayout drawerLayout;
@@ -76,13 +80,16 @@ public class MainActivity extends BaseActivity<MainPresenter, MainIView, MainMod
         bottomNav.setSelectedItemId(R.id.nav_main_home);
         //
         StatusBarUtil.setColor(this, Color.parseColor("#00abff"));
+
     }
 
 
     private void initToolbar() {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowTitleEnabled(false);
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
         /*todo 代码设置 scrollFlags
         app:layout_scrollFlags="scroll|enterAlways"
         * */

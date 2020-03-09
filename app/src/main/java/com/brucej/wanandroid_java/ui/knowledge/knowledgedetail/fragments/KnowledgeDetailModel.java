@@ -1,9 +1,10 @@
 package com.brucej.wanandroid_java.ui.knowledge.knowledgedetail.fragments;
 
-import com.brucej.wanandroid_java.base.BaseModel;
-import com.brucej.wanandroid_java.core.RetrofitHelper;
-import com.brucej.wanandroid_java.core.beans.BaseBean;
-import com.brucej.wanandroid_java.core.beans.KnowledgeListBean;
+import com.brucej.wanandroid_java.api.RestApi;
+import com.brucej.wanandroid_java.ui.knowledge.beans.KnowledgeListBean;
+import com.example.lib_comon.base.BaseModel;
+import com.example.lib_comon.bean.BaseBean;
+import com.example.lib_comon.core.net.RetrofitHelper;
 
 import io.reactivex.Observable;
 
@@ -11,7 +12,7 @@ public class KnowledgeDetailModel extends BaseModel {
 
     public void getKnowledgeListDetail(int page, int cid, KnowledgeListDetailCallback callback) {
         Observable<BaseBean<KnowledgeListBean>> observable =
-                RetrofitHelper.getInstance().getRestApi()
+                RetrofitHelper.getInstance().getApi(RestApi.HOST, RestApi.class)
                         .getKnowledgeListData(page, cid);
         handlerBaseData(observable, callback);
     }
