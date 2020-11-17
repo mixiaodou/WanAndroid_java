@@ -5,16 +5,16 @@
     android:id="@+id/drawer_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.activitys.MainActivity"
+    tools:context=".ui.MainActivity"
     tools:openDrawer="left">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--CoordinatorLayout 中AppBar遮挡 View的内容
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            或者使用 ByeBurger中的behavior
+        <!--CoordinatorLayout 向上滚动 隐藏AppBarLayout
+            使用material的 app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            或者使用ByeBurger库的 app:layout_behavior="string/bye_burger_title_behavior"
         -->
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"

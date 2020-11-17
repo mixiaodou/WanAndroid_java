@@ -1,2 +1,2 @@
-include ':app', ':lib_base', ':lib_common', ':module_1'
+include ':app', ':lib_base', ':lib_common',':module_home', ':module_knowledge', ':module_h5'
 rootProject.name='WanAndroid_java'

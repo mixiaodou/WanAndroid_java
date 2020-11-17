@@ -1,6 +1,5 @@
 package com.example.lib_comon.core.net;
 
-//import com.brucej.wanandroid_java.api.RestApi;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,10 +56,6 @@ public class RetrofitHelper {
         return retrofit;
     }
 
-//    public RestApi getRestApi() {
-//        Retrofit retrofit = getRetrofit(RestApi.HOST);
-//        return retrofit.create(RestApi.class);
-//    }
 
     public <T> T getApi(String host, Class<? extends T> serviceClass) {
         Retrofit retrofit = getRetrofit(host);
